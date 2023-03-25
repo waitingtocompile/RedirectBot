@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedirectBot", "RedirectBot\RedirectBot.csproj", "{AF28F57E-5382-4344-B20B-A7EBA1CAE40B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B869C185-A3E5-42E7-A8BA-60CEC5E94B14}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		license.txt = license.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
