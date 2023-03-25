@@ -37,8 +37,8 @@ public class Program
 	{
 		_client = new DiscordSocketClient();
 		_client.Log += Log;
-		_client.Ready += OnClientReady;
-		_client.SlashCommandExecuted += OnMoveCommandExecuted;
+		_client.Ready += RefreshCommands;
+		_client.SlashCommandExecuted += ExecuteMoveCommand;
 	}
 
 	public async Task RunAsync(AppConfig? config)
@@ -60,9 +60,10 @@ public class Program
 		await Task.Delay(-1);
 	}
 
-	public async Task OnClientReady()
+	public async Task RefreshCommands()
 	{
 		//this doesn't actually need to be done every time it's run, only when the command is new or changing
+		//I should probably do something about that
 
 		var commandBuilder = new SlashCommandBuilder();
 
@@ -87,11 +88,11 @@ public class Program
 		}
 	}
 
-	public async Task OnMoveCommandExecuted(SocketSlashCommand command)
+	public async Task ExecuteMoveCommand(SocketSlashCommand command)
 	{
 		if(command.CommandName != "move")
 		{
-			//not our job to respond to it
+			//not our job to respond to it. This shouldn't come up though, this is the only command we offer
 			return;
 		}
 
