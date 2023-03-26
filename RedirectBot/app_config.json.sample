@@ -1,3 +1,9 @@
 {
-  "token": ""
+  "token": "",
+  "protectedChannelGroups": [
+	{
+	  "roleID": "1234567890",
+	  "moveMessage": "This is an example message for moving to a channel protected behind a specific role"
+	}
+  ]
 }
